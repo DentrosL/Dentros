@@ -1,14 +1,30 @@
-# LzD
+# Dentros — Portfolio
 
-## 🧞Commands
+The portfolio presents my work, technical stack, current studies and interests, with a focus on software development, systems, problem solving and continuous learning.
 
-All commands are run from the root of the project, from a terminal:
+## Tech Stack
 
-| Command                   | Action                                           |
-| :------------------------ | :------------------------ |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- Astro
+- TypeScript
+- Tailwind CSS
+- Roboto Mono
+
+## Features
+
+- Responsive design
+- English and Portuguese versions
+- Project showcase
+- Contact links
+- Backend-focused developer profile
+- Dark interface with terminal-inspired elements
+
+## Structure
+
+```text
+src/
+├── components/
+├── data/
+├── layouts/
+├── pages/
+│   └── pt/
+└── styles/
