@@ -35,15 +35,16 @@ const languages = [
 ];
 ---
 
-<nav class="mx-auto w-full max-w-6xl px-6 py-6">
+<nav class="mx-auto w-full max-w-6xl px-4 py-5 sm:px-6 md:py-6">
   <div class="flex items-center justify-between">
     <a
       href="/"
-      class="text-lg font-bold text-text transition-colors hover:text-primary-light"
+      class="text-base font-bold text-text transition-colors hover:text-primary-light sm:text-lg"
     >
       &lt;dentros /&gt;
     </a>
 
+    <!-- Desktop -->
     <div class="hidden items-center gap-6 text-sm md:flex">
       {links.map((link) => (
         <a
@@ -56,15 +57,17 @@ const languages = [
 
       <span class="text-surface">|</span>
 
-      <div class="flex gap-2">
+      <div
+        class="flex rounded-md border border-primary-light/20 bg-primary-light/10 p-1 backdrop-blur-sm"
+      >
         {languages.map((language) => (
           <a
             href={language.href}
             class:list={[
-              'transition-colors',
+              'rounded px-2 py-1 text-xs transition-colors',
               language.active
-                ? 'text-text'
-                : 'text-text-muted hover:text-primary-light',
+                ? 'bg-primary text-text'
+                : 'text-text-muted hover:text-text',
             ]}
           >
             {language.label}
@@ -73,43 +76,50 @@ const languages = [
       </div>
     </div>
 
+    <!-- Mobile -->
     <details class="relative md:hidden">
       <summary
-        class="cursor-pointer list-none text-sm text-text-muted transition-colors hover:text-text"
+        class="cursor-pointer list-none rounded-md border border-surface px-3 py-2 text-sm text-text-muted transition-colors hover:border-primary hover:text-text"
       >
         {t.nav.menu}
       </summary>
 
       <div
-        class="absolute right-0 top-10 z-10 flex min-w-32 flex-col gap-4 rounded-md border border-surface bg-background p-4 text-sm shadow-lg"
+        class="absolute right-0 top-12 z-20 w-56 rounded-lg border border-surface bg-surface p-4 shadow-xl"
       >
-        {links.map((link) => (
-          <a
-            href={link.href}
-            class="text-text-muted transition-colors hover:text-primary-light"
-          >
-            {link.label}
-          </a>
-        ))}
-
-        <span class="border-t border-surface pt-4 text-xs text-text-muted">
-          {t.nav.language}
-        </span>
-
-        <div class="flex gap-4">
-          {languages.map((language) => (
+        <div class="flex flex-col gap-4">
+          {links.map((link) => (
             <a
-              href={language.href}
-              class:list={[
-                'transition-colors',
-                language.active
-                  ? 'text-text'
-                  : 'text-text-muted hover:text-primary-light',
-              ]}
+              href={link.href}
+              class="text-sm text-text-muted transition-colors hover:text-primary-light"
             >
-              {language.label}
+              {link.label}
             </a>
           ))}
+        </div>
+
+        <div class="mt-5 border-t border-surface pt-4">
+          <p class="mb-3 text-xs text-text-muted">
+            {t.nav.language}
+          </p>
+
+          <div
+            class="inline-flex rounded-md border border-primary-light/20 bg-primary-light/10 p-1 backdrop-blur-sm"
+          >
+            {languages.map((language) => (
+              <a
+                href={language.href}
+                class:list={[
+                  'rounded px-2 py-1 text-xs transition-colors',
+                  language.active
+                    ? 'bg-primary text-text'
+                    : 'text-text-muted hover:text-text',
+                ]}
+              >
+                {language.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </details>
