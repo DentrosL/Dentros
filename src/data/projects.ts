@@ -1,23 +1,33 @@
-export const projects = [
+type ProjectDescriptionKey = 'sorting' | 'worktree' | 'avl';
+
+type Project = {
+  title: string;
+  type: string;
+  descriptionKey: ProjectDescriptionKey;
+  tags: string[];
+  href: string;
+};
+
+export const projects: Project[] = [
   {
-    title: 'Ordenações',
-    description:
-      'Didactic implementations of classic sorting algorithms in Python, focused on understanding how each algorithm works.',
+    title: 'Sorts',
+    type: 'Algorithms',
+    descriptionKey: 'sorting',
     tags: ['Python', 'Algorithms'],
     href: 'https://github.com/DentrosL/Ordenacoes',
   },
   {
-    title: 'Git Worktree',
-    description:
-      'A practical study of Git Worktree, combining documentation, examples and a small Python project.',
+    title: 'Worktree',
+    type: 'Tooling & Documentation',
+    descriptionKey: 'worktree',
     tags: ['Git', 'Python', 'Documentation'],
     href: 'https://github.com/DentrosL/WorktreeTests',
   },
   {
-    title: 'Árvore AVL',
-    description:
-      'A data structures project focused on implementing and understanding self-balancing AVL trees.',
-    tags: ['Python', 'Data Structures'],
+    title: 'AVL',
+    type: 'Data Structures',
+    descriptionKey: 'avl',
+    tags: ['C', 'Data Structures'],
     href: 'https://github.com/DentrosL/ArvoreAVL',
   },
 ];

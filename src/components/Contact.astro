@@ -1,52 +1,62 @@
+---
+import { translations } from '../data/translations';
+
+type Lang = keyof typeof translations;
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = translations[lang];
+---
+
 <section id="contact" class="mx-auto max-w-6xl px-6 py-24">
-  <div class="max-w-2xl">
-    <p class="text-sm text-primary-light">
-      $ ./contact.sh
-    </p>
+  <div class="border-t border-surface pt-24">
+    <div class="max-w-2xl">
+      <p class="text-sm text-primary-light">
+        $ ./contact.sh
+      </p>
 
-    <h2 class="mt-3 text-3xl font-bold text-text md:text-4xl">
-      Let’s build something.
-    </h2>
+      <h2 class="mt-3 text-3xl font-bold text-text md:text-4xl">
+        {t.contact.title}
+      </h2>
 
-    <p class="mt-6 leading-7 text-text-muted">
-      Have a project, an opportunity or just want to talk about
-      technology? Feel free to reach out.
-    </p>
+      <p class="mt-6 leading-7 text-text-muted">
+        {t.contact.description}
+      </p>
 
-    <div class="mt-8 flex flex-wrap gap-5 text-sm">
-      <a
-        href="mailto:laizbdetros@gmail.com"
-        class="text-text-muted transition-colors hover:text-primary-light"
-      >
-        email ↗
-      </a>
+      <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+        <a
+          href="mailto:laizbdetros@gmail.com"
+          class="text-text-muted transition-colors hover:text-primary-light"
+        >
+          email ↗
+        </a>
 
-      <a
-        href="https://www.linkedin.com/in/laiz-detros"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-text-muted transition-colors hover:text-primary-light"
-      >
-        linkedin ↗
-      </a>
+        <a
+          href="https://www.linkedin.com/in/laiz-detros"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted transition-colors hover:text-primary-light"
+        >
+          linkedin ↗
+        </a>
 
-      <a
-        href="https://github.com/DentrosL"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-text-muted transition-colors hover:text-primary-light"
-      >
-        github ↗
-      </a>
+        <a
+          href="https://github.com/DentrosL"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted transition-colors hover:text-primary-light"
+        >
+          github ↗
+        </a>
 
-      <a
-        href="https://wa.me/554791772731"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-text-muted transition-colors hover:text-primary-light"
-      >
-        whatsapp ↗
-      </a>
+        <a
+          href="https://wa.me/554791772731"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-text-muted transition-colors hover:text-primary-light"
+        >
+          whatsapp ↗
+        </a>
+      </div>
     </div>
   </div>
 </section>

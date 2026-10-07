@@ -1,3 +1,12 @@
+---
+import { translations } from '../data/translations';
+
+type Lang = keyof typeof translations;
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = translations[lang];
+---
+
 <section class="mx-auto max-w-6xl px-6 py-24">
   <div class="mb-12">
     <p class="text-sm text-primary-light">
@@ -5,41 +14,50 @@
     </p>
 
     <h2 class="mt-3 text-3xl font-bold text-text md:text-4xl">
-      Currently
+      {t.currently.title}
     </h2>
   </div>
 
   <div class="grid gap-6 md:grid-cols-3">
-    <div>
+    <div class="border-l border-success pl-5">
       <p class="text-sm text-success">
-        learning
+        {t.currently.learning.label}
       </p>
 
+      <h3 class="mt-3 font-bold text-text">
+        {t.currently.learning.title}
+      </h3>
+
       <p class="mt-3 leading-7 text-text-muted">
-        Improving my development skills while studying software
-        engineering and expanding my knowledge of finance.
+        {t.currently.learning.description}
       </p>
     </div>
 
-    <div>
+    <div class="border-l border-success pl-5">
       <p class="text-sm text-success">
-        building
+        {t.currently.building.label}
       </p>
 
+      <h3 class="mt-3 font-bold text-text">
+        {t.currently.building.title}
+      </h3>
+
       <p class="mt-3 leading-7 text-text-muted">
-        Personal projects, experiments and tools that help me learn
-        through practice.
+        {t.currently.building.description}
       </p>
     </div>
 
-    <div>
+    <div class="border-l border-success pl-5">
       <p class="text-sm text-success">
-        exploring
+        {t.currently.exploring.label}
       </p>
 
+      <h3 class="mt-3 font-bold text-text">
+        {t.currently.exploring.title}
+      </h3>
+
       <p class="mt-3 leading-7 text-text-muted">
-        The intersection between technology, systems and financial
-        markets.
+        {t.currently.exploring.description}
       </p>
     </div>
   </div>

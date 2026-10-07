@@ -1,3 +1,12 @@
+---
+import { translations } from '../data/translations';
+
+type Lang = keyof typeof translations;
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = translations[lang];
+---
+
 <section class="mx-auto max-w-6xl px-6 py-24">
   <div class="mb-12">
     <p class="text-sm text-primary-light">
@@ -5,14 +14,14 @@
     </p>
 
     <h2 class="mt-3 text-3xl font-bold text-text md:text-4xl">
-      Stack
+      {t.stack.title}
     </h2>
   </div>
 
   <div class="grid gap-6 md:grid-cols-3">
     <div class="rounded-lg border border-surface p-6">
       <p class="text-sm text-success">
-        strong
+        {t.stack.primary}
       </p>
 
       <div class="mt-5 flex flex-wrap gap-2">
@@ -24,7 +33,7 @@
 
     <div class="rounded-lg border border-surface p-6">
       <p class="text-sm text-primary-light">
-        comfortable
+        {t.stack.workingWith}
       </p>
 
       <div class="mt-5 flex flex-wrap gap-2">
@@ -37,7 +46,7 @@
 
     <div class="rounded-lg border border-surface p-6">
       <p class="text-sm text-text-muted">
-        exploring
+        {t.stack.learning}
       </p>
 
       <div class="mt-5 flex flex-wrap gap-2">

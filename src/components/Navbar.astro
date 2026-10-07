@@ -1,19 +1,117 @@
-<nav class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6">
-  <a href="/" class="text-lg font-bold text-text">
-    &lt;dentros /&gt;
-  </a>
+---
+import { translations } from '../data/translations';
 
-  <div class="flex items-center gap-6 text-sm text-text-muted">
-    <a href="#work" class="transition-colors hover:text-primary-light">
-      work
+type Lang = keyof typeof translations;
+
+const { lang = 'en' } = Astro.props as { lang?: Lang };
+const t = translations[lang];
+
+const links = [
+  {
+    label: t.nav.work,
+    href: '#work',
+  },
+  {
+    label: t.nav.about,
+    href: '#about',
+  },
+  {
+    label: t.nav.contact,
+    href: '#contact',
+  },
+];
+
+const languages = [
+  {
+    label: 'EN',
+    href: '/',
+    active: lang === 'en',
+  },
+  {
+    label: 'PT',
+    href: '/pt/',
+    active: lang === 'pt',
+  },
+];
+---
+
+<nav class="mx-auto w-full max-w-6xl px-6 py-6">
+  <div class="flex items-center justify-between">
+    <a
+      href="/"
+      class="text-lg font-bold text-text transition-colors hover:text-primary-light"
+    >
+      &lt;dentros /&gt;
     </a>
 
-    <a href="#about" class="transition-colors hover:text-primary-light">
-      about
-    </a>
+    <div class="hidden items-center gap-6 text-sm md:flex">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="text-text-muted transition-colors hover:text-primary-light"
+        >
+          {link.label}
+        </a>
+      ))}
 
-    <a href="#contact" class="transition-colors hover:text-primary-light">
-      contact
-    </a>
+      <span class="text-surface">|</span>
+
+      <div class="flex gap-2">
+        {languages.map((language) => (
+          <a
+            href={language.href}
+            class:list={[
+              'transition-colors',
+              language.active
+                ? 'text-text'
+                : 'text-text-muted hover:text-primary-light',
+            ]}
+          >
+            {language.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <details class="relative md:hidden">
+      <summary
+        class="cursor-pointer list-none text-sm text-text-muted transition-colors hover:text-text"
+      >
+        {t.nav.menu}
+      </summary>
+
+      <div
+        class="absolute right-0 top-10 z-10 flex min-w-32 flex-col gap-4 rounded-md border border-surface bg-background p-4 text-sm shadow-lg"
+      >
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class="text-text-muted transition-colors hover:text-primary-light"
+          >
+            {link.label}
+          </a>
+        ))}
+
+        <span class="border-t border-surface pt-4 text-xs text-text-muted">
+          {t.nav.language}
+        </span>
+
+        <div class="flex gap-4">
+          {languages.map((language) => (
+            <a
+              href={language.href}
+              class:list={[
+                'transition-colors',
+                language.active
+                  ? 'text-text'
+                  : 'text-text-muted hover:text-primary-light',
+              ]}
+            >
+              {language.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </details>
   </div>
 </nav>
