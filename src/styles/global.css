@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+@theme {
+  --color-background: #0d0b14;
+  --color-surface: #15121f;
+
+  --color-primary: #45058c;
+  --color-primary-light: #7c3aed;
+
+  --color-success: #14532d;
+  --color-danger: #7f1d1d;
+
+  --color-text: #e8e5ef;
+  --color-text-muted: #9691a3;
+
+  --font-mono: "Roboto Mono", monospace;
+}
+
+:root {
+  font-family: var(--font-mono);
+  color: var(--color-text);
+  background: var(--color-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-text);
+}

@@ -1,0 +1,68 @@
+---
+import { projects } from '../data/projects';
+---
+
+<section id="work" class="mx-auto max-w-6xl px-6 py-24">
+  <div class="mb-12">
+    <p class="text-sm text-primary-light">
+      $ ls ./projects
+    </p>
+
+    <h2 class="mt-3 text-3xl font-bold text-text md:text-4xl">
+      Selected Work
+    </h2>
+
+    <p class="mt-4 max-w-2xl text-text-muted">
+      A few projects where I explored algorithms, data structures,
+      development tools and problem solving.
+    </p>
+  </div>
+
+  <div class="grid gap-6 md:grid-cols-3">
+    {projects.map((project) => (
+      <article
+        class="group flex h-full flex-col rounded-lg border border-surface bg-surface/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary"
+      >
+        <div class="flex items-start justify-between gap-4">
+          <span class="text-xs text-primary-light">
+            project
+          </span>
+
+          <span
+            class="text-xs text-success"
+            title="Repository available"
+          >
+            ●
+          </span>
+        </div>
+
+        <h3 class="mt-6 text-xl font-bold text-text">
+          {project.title}
+        </h3>
+
+        <p class="mt-4 flex-1 text-sm leading-6 text-text-muted">
+          {project.description}
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span
+              class="rounded border border-primary/30 px-2 py-1 text-xs text-text-muted"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-6 text-sm font-bold text-primary-light transition-colors hover:text-text"
+        >
+          view_repository() →
+        </a>
+      </article>
+    ))}
+  </div>
+</section>

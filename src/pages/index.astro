@@ -1,10 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import Navbar from '../components/Navbar.astro';
+
+import Hero from '../components/Hero.astro';
+import Work from '../components/Work.astro';
+import About from '../components/About.astro';
+import Stack from '../components/Stack.astro';
+import Currently from '../components/Currently.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Dentros | Developer">
+<Layout title="Dentros | Full Stack Developer">
+  <Navbar />
+
   <main>
-    <h1>Olá, eu sou a Laiz.</h1>
-    <p>Desenvolvedora</p>
+	<Hero />
+    <Work />
+    <About />
+    <Stack />
+    <Currently />
+    <Contact />
   </main>
+
+  <Footer />
 </Layout>
