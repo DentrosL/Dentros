@@ -1,4 +1,4 @@
-# Dentros — Portfolio
+# Dentros - Portfolio
 
 The portfolio presents my work, technical stack, current studies and interests, with a focus on software development, systems, problem solving and continuous learning.
 
@@ -7,7 +7,6 @@ The portfolio presents my work, technical stack, current studies and interests, 
 - Astro
 - TypeScript
 - Tailwind CSS
-- Roboto Mono
 
 ## Features
 
