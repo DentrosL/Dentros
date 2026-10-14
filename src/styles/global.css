@@ -4,17 +4,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0d0b14;
-  --color-surface: #15121f;
+  // testando paletas
+  --color-background: #0a0a0f;
+  --color-surface: #12121b;
+  --color-surface-light: #1a1926;
 
-  --color-primary: #45058c;
-  --color-primary-light: #7c3aed;
+  --color-primary: #a78bfa;
+  --color-primary-light: #c4b5fd;
+  --color-primary-dark: #7c3aed;
 
-  --color-success: #14532d;
-  --color-danger: #7f1d1d;
+  --color-success: #86efac;
+  --color-danger: #f87171;
 
-  --color-text: #e8e5ef;
-  --color-text-muted: #9691a3;
+  --color-text: #f4f1fa;
+  --color-text-muted: #a09aaf;
+  --color-border: #292535;
 
   --font-mono: "Roboto Mono", monospace;
 }
@@ -26,16 +30,28 @@
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-optical-sizing: auto;
 }
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: var(--color-border) var(--color-background);
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  background:
+    radial-gradient(
+      ellipse at 15% 0%,
+      rgb(124 58 237 / 10%),
+      transparent 35rem
+    ),
+    var(--color-background);
 }
 
 * {
@@ -43,6 +59,22 @@ body {
 }
 
 ::selection {
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
 }
