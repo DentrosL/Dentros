@@ -6,6 +6,10 @@ export const translations = {
       contact: 'contact',
       menu: 'menu',
       language: 'language',
+      ariaLabel: 'Main navigation',
+      homeLabel: 'Dentros — Home',
+      navigation: 'NAVIGATION',
+      online: 'ONLINE',
     },
 
     home: {
@@ -70,38 +74,111 @@ export const translations = {
       primary: 'primary',
       workingWith: 'working_with',
       learning: 'learning',
+      descriptions: {
+        primary: 'Technologies I use in projects and daily development.',
+        workingWith: 'Tools and technologies I work with.',
+        learning: 'Technologies and subjects I am actively exploring.',
+      },
+      overview: 'SKILLS_OVERVIEW',
+      continuousLearning: 'CONTINUOUS_LEARNING',
+      technicalProfile: 'TECHNICAL PROFILE',
+      technologies: 'TECHNOLOGIES',
+      groups: 'ACROSS {count} GROUPS',
+      categories: {
+        primary: 'CORE TECHNOLOGIES',
+        workingWith: 'TOOLS & FRAMEWORKS',
+        learning: 'IN DEVELOPMENT',
+      },
+      items: 'ITEMS',
+      note: 'Skills evolve through practical projects, experimentation, and continuous study.',
+      noteLabel: 'NOTE:',
+      status: 'LAST STATUS: LEARNING',
+
+      group: 'GROUP',
     },
 
     currently: {
       title: 'Currently',
+      introTitle: "What's on my radar.",
+      introDescription:
+        'Continuous learning, ongoing projects, and ideas I am exploring.',
+
+      terminalTitle: 'CURRENTLY.JSON',
+      terminalStatus: 'active',
+      terminalMindset: 'growth',
+
+      overview: 'OVERVIEW / ACTIVITIES',
+      inProgress: 'IN PROGRESS',
+      statusLabel: 'STATUS',
+      active: 'ACTIVE',
+      focusLabel: 'FOCUS',
+
+      footerStatus: 'CURRENT_STATUS',
+      footerHealth: 'ALL_GOOD',
+      footerMessage: 'Small steps. Big goals.',
+
       learning: {
-        label: 'learning',
+        label: 'LEARNING',
         title: 'Software & Finance',
         description:
           'Improving my development skills while studying software engineering and building a stronger understanding of financial markets.',
+        focus: 'LEARNING',
       },
+
       building: {
-        label: 'building',
+        label: 'BUILDING',
         title: 'Personal Projects',
         description:
           'Creating projects that let me experiment, solve problems and learn by actually building things.',
+        focus: 'DEVELOPMENT',
       },
+
       exploring: {
-        label: 'exploring',
+        label: 'EXPLORING',
         title: 'Technology × Markets',
         description:
           'Exploring how software, automation and financial markets can come together in future projects.',
+        focus: 'INTEGRATION',
       },
     },
 
     contact: {
       title: 'Let’s build something.',
       description:
-        'Have a project, an opportunity or just want to talk about technology? Feel free to reach out.',
+        'Have a project in mind, want to exchange ideas, or just want to connect? My inbox is open.',
+      eyebrow: 'GET IN TOUCH',
+      availability: 'OPEN TO OPPORTUNITIES',
+      availabilityDescription: 'Always open to meaningful connections.',
+      responseLabel: 'PREFERRED CHANNEL',
+      responseValue: 'EMAIL',
+      linksTitle: 'FIND ME ONLINE',
+      linksDescription: 'Choose the channel that works best for you.',
+      labels: {
+        email: 'Email',
+        linkedin: 'LinkedIn',
+        github: 'GitHub',
+        whatsapp: 'WhatsApp',
+      },
+      descriptions: {
+        email: 'For inquiries and conversations',
+        linkedin: 'Professional network',
+        github: 'Projects and source code',
+        whatsapp: 'Quick conversations',
+      },
+      externalLabel: 'OPEN LINK',
+      emailLabel: 'SEND AN EMAIL',
+      footerNote: 'No bots. Just a real conversation.',
     },
 
     footer: {
+      endContext: 'learning continuously - turning ideas into projects.',
       builtWith: 'built with Astro & TypeScript',
+      online: 'PORTFOLIO.ONLINE',
+      navigation: 'NAVIGATION',
+      navigationAriaLabel: 'Footer navigation',
+      elsewhere: 'ELSEWHERE',
+      copyright: '© {year} Dentros',
+      backToTop: 'BACK TO TOP',
     },
   },
 
@@ -116,6 +193,10 @@ export const translations = {
       contact: 'contato',
       menu: 'menu',
       language: 'idioma',
+      ariaLabel: 'Navegação principal',
+      homeLabel: 'Dentros — Início',
+      navigation: 'NAVEGAÇÃO',
+      online: 'ONLINE',
     },
 
     home: {
@@ -180,38 +261,110 @@ export const translations = {
       primary: 'principal',
       workingWith: 'trabalhando_com',
       learning: 'aprendendo',
+      descriptions: {
+        primary: 'Tecnologias que utilizo em projetos e no desenvolvimento diário.',
+        workingWith: 'Ferramentas e tecnologias com as quais trabalho.',
+        learning: 'Tecnologias e assuntos que estou explorando ativamente.',
+      },
+      overview: 'VISÃO_GERAL_DAS_HABILIDADES',
+      continuousLearning: 'APRENDIZADO_CONTÍNUO',
+      technicalProfile: 'PERFIL TÉCNICO',
+      technologies: 'TECNOLOGIAS',
+      groups: 'EM {count} GRUPOS',
+      categories: {
+        primary: 'TECNOLOGIAS PRINCIPAIS',
+        workingWith: 'FERRAMENTAS & FRAMEWORKS',
+        learning: 'EM DESENVOLVIMENTO',
+      },
+      items: 'ITENS',
+      note: 'Minhas habilidades evoluem por meio de projetos práticos, experimentação e estudo contínuo.',
+      noteLabel: 'NOTA:',
+      status: 'STATUS ATUAL: APRENDIZADO',
+      group: 'GRUPO',
     },
 
     currently: {
       title: 'Atualmente',
+      introTitle: 'O que está no meu radar.',
+      introDescription:
+        'Aprendizado contínuo, projetos em andamento e ideias que estou explorando.',
+
+      terminalTitle: 'CURRENTLY.JSON',
+      terminalStatus: 'ativo',
+      terminalMindset: 'crescimento',
+
+      overview: 'VISÃO GERAL / ATIVIDADES',
+      inProgress: 'EM ANDAMENTO',
+      statusLabel: 'STATUS',
+      active: 'ATIVO',
+      focusLabel: 'FOCO',
+
+      footerStatus: 'STATUS_ATUAL',
+      footerHealth: 'TUDO_BEM',
+      footerMessage: 'Pequenos passos. Grandes objetivos.',
+
       learning: {
-        label: 'aprendendo',
+        label: 'APRENDENDO',
         title: 'Software & Finanças',
         description:
-          'Aprimorando minhas habilidades em desenvolvimento enquanto estudo engenharia de software e construo uma compreensão mais sólida dos mercados financeiros.',
+          'Aprimorando minhas habilidades de desenvolvimento enquanto estudo engenharia de software e aprofundo meu entendimento dos mercados financeiros.',
+        focus: 'APRENDIZADO',
       },
+
       building: {
-        label: 'construindo',
+        label: 'DESENVOLVENDO',
         title: 'Projetos Pessoais',
         description:
-          'Criando projetos que me permitem experimentar, resolver problemas e aprender colocando as ideias em prática.',
+          'Criando projetos que me permitem experimentar, resolver problemas e aprender colocando a mão na massa.',
+        focus: 'DESENVOLVIMENTO',
       },
+
       exploring: {
-        label: 'explorando',
+        label: 'EXPLORANDO',
         title: 'Tecnologia × Mercados',
         description:
-          'Explorando como software, automação e mercados financeiros podem se unir em projetos futuros.',
+          'Explorando como software, automação e mercados financeiros podem se conectar em projetos futuros.',
+        focus: 'INTEGRAÇÃO',
       },
     },
 
     contact: {
       title: 'Vamos construir algo.',
       description:
-        'Tem um projeto, uma oportunidade ou só quer conversar sobre tecnologia? Fique à vontade para entrar em contato.',
+        'Tem um projeto em mente, quer trocar ideias ou simplesmente entrar em contato? Minha caixa de entrada está aberta.',
+      eyebrow: 'VAMOS CONVERSAR',
+      availability: 'ABERTA A OPORTUNIDADES',
+      availabilityDescription: 'Sempre aberta a conexões que façam sentido.',
+      responseLabel: 'CANAL PREFERENCIAL',
+      responseValue: 'EMAIL',
+      linksTitle: 'ME ENCONTRE ONLINE',
+      linksDescription: 'Escolha o canal que funciona melhor para você.',
+      labels: {
+        email: 'Email',
+        linkedin: 'LinkedIn',
+        github: 'GitHub',
+        whatsapp: 'WhatsApp',
+      },
+      descriptions: {
+        email: 'Para contatos e conversas',
+        linkedin: 'Rede profissional',
+        github: 'Projetos e código-fonte',
+        whatsapp: 'Conversas rápidas',
+      },
+      externalLabel: 'ABRIR LINK',
+      emailLabel: 'ENVIAR UM EMAIL',
+      footerNote: 'Sem robôs. Apenas uma conversa de verdade.',
     },
 
     footer: {
+      endContext: 'aprendendo continuamente - transformando ideias em projetos.',
       builtWith: 'feito com Astro & TypeScript',
+      online: 'PORTFÓLIO.ONLINE',
+      navigation: 'NAVEGAÇÃO',
+      navigationAriaLabel: 'Navegação do rodapé',
+      elsewhere: 'OUTROS LINKS',
+      copyright: '© {year} Dentros',
+      backToTop: 'VOLTAR AO TOPO',
     },
   },
 } as const;
