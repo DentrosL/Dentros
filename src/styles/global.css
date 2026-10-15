@@ -4,7 +4,7 @@
 @import "tailwindcss";
 
 @theme {
-  // testando paletas
+  /* testando paletas */
   --color-background: #0a0a0f;
   --color-surface: #12121b;
   --color-surface-light: #1a1926;

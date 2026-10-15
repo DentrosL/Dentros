@@ -18,11 +18,29 @@ export const translations = {
       availability: 'available for opportunities',
     },
 
+    profile: {
+      eyebrow: 'SOFTWARE DEVELOPER',
+      panel: 'PROFILE.SUMMARY',
+      status: 'OPEN TO OPPORTUNITIES',
+      role: 'primary_role',
+      focus: 'technical_focus',
+      approach: 'working_principles',
+      principles: ['Organize', 'Solve', 'Deliver'],
+      location: 'Based in Brazil',
+      index: 'PROFILE / 007',
+    },
+
     work: {
       title: 'Work',
       description:
         'A few projects where I explored algorithms, data structures, development tools and problem solving.',
+
+      eyebrow: 'SELECTED WORK',
+      command: '$ ls -la ./projects',
+      count: 'PROJECTS',
       repository: 'view_repository()',
+      index: 'PROJECT',
+      empty: 'No projects available.',
     },
 
     projects: {
@@ -83,7 +101,7 @@ export const translations = {
     },
 
     footer: {
-      builtWith: 'built with ',
+      builtWith: 'built with Astro & TypeScript',
     },
   },
 
@@ -110,11 +128,29 @@ export const translations = {
       availability: 'disponível para oportunidades',
     },
 
+    profile: {
+      eyebrow: 'DESENVOLVEDORA DE SOFTWARE',
+      panel: 'PERFIL.RESUMO',
+      status: 'ABERTA A OPORTUNIDADES',
+      role: 'atuacao_principal',
+      focus: 'foco_tecnico',
+      approach: 'principios_de_trabalho',
+      principles: ['Organizar', 'Resolver', 'Entregar'],
+      location: 'Brasil',
+      index: 'PERFIL / 007',
+    },
+
     work: {
       title: 'Projetos',
       description:
         'Alguns projetos onde explorei algoritmos, estruturas de dados, ferramentas de desenvolvimento e resolução de problemas.',
+      
+        eyebrow: 'PROJETOS SELECIONADOS',
+      command: '$ ls -la ./projetos',
+      count: 'PROJETOS',
       repository: 'ver_repositorio()',
+      index: 'PROJETO',
+      empty: 'Nenhum projeto disponível.',
     },
 
     projects: {
@@ -175,7 +211,7 @@ export const translations = {
     },
 
     footer: {
-      builtWith: 'feito com ',
+      builtWith: 'feito com Astro & TypeScript',
     },
   },
 } as const;

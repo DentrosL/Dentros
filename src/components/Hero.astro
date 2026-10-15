@@ -6,47 +6,179 @@ type Lang = keyof typeof translations;
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const t = translations[lang];
 ---
+
 <section
-  class="mx-auto flex min-h-[calc(100vh-80px)] w-full max-w-6xl items-center px-4 py-16 sm:px-6 sm:py-20 md:min-h-[calc(100vh-89px)] md:py-0"
+  class="relative flex min-h-[calc(100svh-76px)] w-full items-center overflow-hidden px-5 py-16 sm:px-8 md:min-h-[calc(100svh-89px)] md:px-12 md:py-20 xl:px-16"
 >
-  <div class="max-w-3xl">
-    <p class="mb-4 text-sm text-primary-light">
-      $ whoami
-    </p>
+  <div
+    class="pointer-events-none absolute -left-40 top-1/4 h-96 w-96 rounded-full bg-primary-dark/10 blur-[120px]"
+    aria-hidden="true"
+  ></div>
 
-    <h1 class="text-4xl font-bold tracking-tight text-text sm:text-5xl md:text-7xl">
-      Laiz Detros
-    </h1>
-
-    <p class="mt-4 text-lg text-text-muted sm:text-xl md:text-2xl">
-      {t.home.role}
-      <span class="text-success">·</span>
-      {t.home.focus}
-    </p>
-
-    <p class="mt-8 max-w-2xl text-base leading-7 text-text-muted md:text-lg">
-      {t.home.description}
-    </p>
-
-    <div class="mt-10 flex flex-wrap gap-4">
-      <a
-        href="#work"
-        class="rounded-md bg-primary px-5 py-3 text-sm font-bold text-text transition-colors hover:bg-primary-light"
+  <div
+    class="relative grid w-full items-center gap-12 lg:grid-cols-[minmax(0,1.5fr)_minmax(320px,0.7fr)] lg:gap-16 xl:gap-24"
+  >
+    <div class="min-w-0">
+      <div
+        class="mb-8 inline-flex items-center gap-3 rounded-full border border-border bg-surface/60 px-3 py-2 text-xs text-text-muted"
       >
-        {t.home.work}
-      </a>
+        <span class="relative flex h-2 w-2">
+          <span
+            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-40"
+          ></span>
+          <span
+            class="relative inline-flex h-2 w-2 rounded-full bg-success"
+          ></span>
+        </span>
 
-      <a
-        href="mailto:laizbdetros@gmail.com"
-        class="rounded-md border border-surface px-5 py-3 text-sm text-text-muted transition-colors hover:border-primary hover:text-text"
+        <span>{t.profile.eyebrow}</span>
+      </div>
+
+      <p class="mb-4 text-sm text-primary">
+        $ whoami
+      </p>
+
+      <h1
+        class="text-5xl font-bold leading-[1.05] tracking-tight text-text sm:text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl"
       >
-        {t.home.contact}
-      </a>
+        Laiz
+        <span
+          class="block bg-gradient-to-r from-primary-light via-primary to-text bg-clip-text text-transparent"
+        >
+          Detros<span class="text-primary-light">.</span>
+        </span>
+      </h1>
+
+      <p
+        class="mt-7 text-lg leading-relaxed text-text sm:text-xl md:text-2xl"
+      >
+        {t.home.role}
+        <span class="mx-1 text-primary">/</span>
+        <span class="text-text-muted">{t.home.focus}</span>
+      </p>
+
+      <p
+        class="mt-6 max-w-2xl text-sm leading-7 text-text-muted sm:text-base sm:leading-8"
+      >
+        {t.home.description}
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a
+          href="#work"
+          class="group inline-flex items-center gap-3 rounded-md bg-primary px-5 py-3.5 text-sm font-bold text-background transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-light"
+        >
+          {t.home.work}
+          <span class="transition-transform group-hover:translate-x-1">
+            →
+          </span>
+        </a>
+
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-3 rounded-md border border-border bg-surface/40 px-5 py-3.5 text-sm font-medium text-text transition-colors hover:border-primary/60 hover:bg-surface-light"
+        >
+          {t.home.contact}
+          <span class="text-primary-light">↗</span>
+        </a>
+      </div>
+
+      <div
+        class="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 text-xs text-text-muted"
+      >
+        <span class="flex items-center gap-2">
+          <span class="text-success">●</span>
+          {t.home.availability}
+        </span>
+
+        <span class="hidden h-4 w-px bg-border sm:block"></span>
+
+        <span>{t.profile.location}</span>
+      </div>
     </div>
 
-    <div class="mt-12 flex items-center gap-3 text-xs text-text-muted">
-      <span class="text-success">●</span>
-      <span>{t.home.availability}</span>
-    </div>
+    <aside
+      class="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none"
+      aria-label={t.profile.panel}
+    >
+      <div
+        class="overflow-hidden rounded-xl border border-border/70 bg-surface/40 backdrop-blur-sm"
+      >
+        <div
+          class="flex items-center justify-between border-b border-border/70 px-5 py-4"
+        >
+          <div class="flex items-center gap-2" aria-hidden="true">
+            <span class="h-2.5 w-2.5 rounded-full bg-danger/80"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-primary/80"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-success/80"></span>
+          </div>
+
+          <span class="text-[10px] tracking-wider text-text-muted sm:text-xs">
+            {t.profile.panel}
+          </span>
+        </div>
+
+        <div class="space-y-6 p-5 sm:p-6">
+          <div>
+            <p class="mb-3 text-xs text-text-muted">
+              <span class="text-primary">$</span>
+              cat profile.json
+            </p>
+
+            <div
+              class="rounded-lg border border-border/70 bg-background/60 p-4 font-mono text-xs leading-7 sm:text-sm"
+            >
+              <p class="break-words">
+                <span class="text-primary-light">"name"</span>:
+                <span class="text-success">"Laiz Detros"</span>,
+              </p>
+
+              <p class="break-words">
+                <span class="text-primary-light">"role"</span>:
+                <span class="text-success">"{t.profile.role}"</span>,
+              </p>
+
+              <p class="break-words">
+                <span class="text-primary-light">"focus"</span>:
+                <span class="text-success">"{t.profile.focus}"</span>
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p class="mb-3 text-xs text-text-muted">
+              <span class="text-primary">$</span>
+              {t.profile.approach}
+            </p>
+
+            <div class="flex flex-wrap gap-2">
+              {t.profile.principles.map((principle, index) => (
+                <span
+                  class="rounded-md border border-primary/20 bg-primary/5 px-3 py-2 text-xs text-primary-light"
+                >
+                  <span class="mr-2 text-text-muted">
+                    0{index + 1}
+                  </span>
+                  {principle}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div
+            class="flex flex-wrap items-center justify-between gap-3 border-t border-border/70 pt-4"
+          >
+            <span class="flex items-center gap-2 text-xs text-success">
+              <span>●</span>
+              {t.profile.status}
+            </span>
+
+            <span class="text-[10px] text-text-muted">
+              {t.profile.index}
+            </span>
+          </div>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
