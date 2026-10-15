@@ -49,70 +49,58 @@ const languages = [
         aria-label={t.nav.homeLabel}
         class="group flex shrink-0 items-center gap-3"
       >
-        <span
-          class="font-mono text-base font-bold tracking-tight text-text transition-colors group-hover:text-primary-light sm:text-lg"
-        >
+        <span class="font-mono text-base font-bold tracking-tight text-text transition-colors group-hover:text-primary-light sm:text-lg">
           &lt;dentros<span class="text-primary-light"> /</span>&gt;
         </span>
       </a>
 
       <div class="hidden items-center gap-8 md:flex lg:gap-10">
         <div class="flex items-center gap-7 lg:gap-9">
-          {
-            links.map((link) => (
-              <a
-                href={link.href}
-                class="group relative flex items-center gap-2 py-2 text-sm text-text-muted transition-colors duration-200 hover:text-text"
-              >
-                <span class="font-mono text-[10px] text-primary-light/70 transition-colors group-hover:text-primary-light">
-                  {link.number}
-                </span>
+          {links.map((link) => (
+            <a
+              href={link.href}
+              class="group relative flex items-center gap-2 py-2 text-sm text-text-muted transition-colors duration-200 hover:text-text"
+            >
+              <span class="font-mono text-[10px] text-primary-light/70 transition-colors group-hover:text-primary-light">
+                {link.number}
+              </span>
 
-                <span>{link.label}</span>
+              <span>{link.label}</span>
 
-                <span
-                  aria-hidden="true"
-                  class="absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-primary-light transition-transform duration-300 group-hover:scale-x-100"
-                />
-              </a>
-            ))
-          }
+              <span
+                aria-hidden="true"
+                class="absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-primary-light transition-transform duration-300 group-hover:scale-x-100"
+              />
+            </a>
+          ))}
         </div>
 
         <div class="flex items-center gap-4 pl-7 lg:pl-9">
-          <span
-            class="font-mono text-[10px] uppercase tracking-widest text-text-muted"
-          >
+          <span class="font-mono text-[10px] uppercase tracking-widest text-text-muted">
             {t.nav.language}
           </span>
 
-          <div
-            class="flex items-center rounded-lg border border-border/70 bg-surface/50 p-1"
-          >
-            {
-              languages.map((language) => (
-                <a
-                  href={language.href}
-                  aria-current={language.active ? 'page' : undefined}
-                  class:list={[
-                    'rounded-md px-3 py-1.5 font-mono text-xs transition-all duration-200',
-                    language.active
-                      ? 'bg-primary/20 text-primary-light'
-                      : 'text-text-muted hover:text-text',
-                  ]}
-                >
-                  {language.label}
-                </a>
-              ))
-            }
+          <div class="flex items-center rounded-lg border border-border/70 bg-surface/50 p-1">
+            {languages.map((language) => (
+              <a
+                href={language.href}
+                aria-current={language.active ? 'page' : undefined}
+                class:list={[
+                  'rounded-md px-3 py-1.5 font-mono text-xs transition-all duration-200',
+                  language.active
+                    ? 'bg-primary/20 text-primary-light'
+                    : 'text-text-muted hover:text-text',
+                ]}
+              >
+                {language.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
       <details class="group relative md:hidden">
-        <summary
-          class="flex cursor-pointer list-none items-center gap-3 rounded-lg border border-border/70 bg-surface/50 px-4 py-2.5 text-sm text-text transition-colors hover:border-primary-light/40 [&::-webkit-details-marker]:hidden"
-        >
+        <summary class="flex cursor-pointer list-none items-center gap-3 rounded-lg border border-border/70 bg-surface/50 px-4 py-2.5 text-sm text-text transition-colors hover:border-primary-light/40 [&::-webkit-details-marker]:hidden">
           <span class="font-mono text-xs text-primary-light">///</span>
 
           <span>{t.nav.menu}</span>
@@ -132,73 +120,59 @@ const languages = [
           </svg>
         </summary>
 
-        <div
-          class="absolute right-0 top-[calc(100%+12px)] z-50 w-[min(20rem,calc(100vw-2.5rem))] overflow-hidden rounded-xl border border-border bg-surface shadow-2xl shadow-black/30"
-        >
-          <div
-            class="flex items-center justify-between border-b border-border/70 px-5 py-4"
-          >
-            <span
-              class="font-mono text-xs uppercase tracking-widest text-text-muted"
-            >
+        <div class="absolute right-0 top-[calc(100%+12px)] z-50 w-[min(20rem,calc(100vw-2.5rem))] overflow-hidden rounded-xl border border-border bg-surface shadow-2xl shadow-black/30">
+          <div class="flex items-center justify-between border-b border-border/70 px-5 py-4">
+            <span class="font-mono text-xs uppercase tracking-widest text-text-muted">
               {t.nav.navigation}
             </span>
 
-            <span
-              class="flex items-center gap-2 font-mono text-[10px] text-success"
-            >
+            <span class="flex items-center gap-2 font-mono text-[10px] text-success">
               <span class="h-1.5 w-1.5 rounded-full bg-success" />
               {t.nav.online}
             </span>
           </div>
 
           <div class="flex flex-col p-2">
-            {
-              links.map((link) => (
-                <a
-                  href={link.href}
-                  class="group flex items-center gap-4 rounded-lg px-3 py-3 transition-colors hover:bg-background/70"
-                >
-                  <span class="font-mono text-xs text-primary-light/70">
-                    {link.number}
-                  </span>
+            {links.map((link) => (
+              <a
+                href={link.href}
+                class="group flex items-center gap-4 rounded-lg px-3 py-3 transition-colors hover:bg-background/70"
+              >
+                <span class="font-mono text-xs text-primary-light/70">
+                  {link.number}
+                </span>
 
-                  <span class="flex-1 text-sm text-text-muted transition-colors group-hover:text-text">
-                    {link.label}
-                  </span>
+                <span class="flex-1 text-sm text-text-muted transition-colors group-hover:text-text">
+                  {link.label}
+                </span>
 
-                  <span class="text-text-muted transition-transform group-hover:translate-x-1 group-hover:text-primary-light">
-                    →
-                  </span>
-                </a>
-              ))
-            }
+                <span class="text-text-muted transition-transform group-hover:translate-x-1 group-hover:text-primary-light">
+                  →
+                </span>
+              </a>
+            ))}
           </div>
 
           <div class="border-t border-border/70 px-5 py-4">
-            <p
-              class="mb-3 font-mono text-[10px] uppercase tracking-widest text-text-muted"
-            >
+            <p class="mb-3 font-mono text-[10px] uppercase tracking-widest text-text-muted">
               {t.nav.language}
             </p>
 
             <div class="flex gap-2">
-              {
-                languages.map((language) => (
-                  <a
-                    href={language.href}
-                    aria-current={language.active ? 'page' : undefined}
-                    class:list={[
-                      'flex-1 rounded-lg border px-3 py-2 text-center font-mono text-xs transition-colors',
-                      language.active
-                        ? 'border-primary-light/30 bg-primary/10 text-primary-light'
-                        : 'border-border text-text-muted hover:border-primary-light/30 hover:text-text',
-                    ]}
-                  >
-                    {language.label}
-                  </a>
-                ))
-              }
+              {languages.map((language) => (
+                <a
+                  href={language.href}
+                  aria-current={language.active ? 'page' : undefined}
+                  class:list={[
+                    'flex-1 rounded-lg border px-3 py-2 text-center font-mono text-xs transition-colors',
+                    language.active
+                      ? 'border-primary-light/30 bg-primary/10 text-primary-light'
+                      : 'border-border text-text-muted hover:border-primary-light/30 hover:text-text',
+                  ]}
+                >
+                  {language.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>

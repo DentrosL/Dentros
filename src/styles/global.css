@@ -1,7 +1,7 @@
-@import "@fontsource/roboto-mono/400.css";
-@import "@fontsource/roboto-mono/500.css";
-@import "@fontsource/roboto-mono/700.css";
-@import "tailwindcss";
+@import '@fontsource/roboto-mono/400.css';
+@import '@fontsource/roboto-mono/500.css';
+@import '@fontsource/roboto-mono/700.css';
+@import 'tailwindcss';
 
 @theme {
   /* testando paletas */
@@ -20,7 +20,7 @@
   --color-text-muted: #a09aaf;
   --color-border: #292535;
 
-  --font-mono: "Roboto Mono", monospace;
+  --font-mono: 'Roboto Mono', monospace;
 }
 
 :root {

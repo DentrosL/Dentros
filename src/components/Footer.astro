@@ -46,9 +46,7 @@ const socialLinks = [
   />
 
   <div class="relative w-full px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
-    <div
-      class="grid gap-12 py-12 sm:py-16 lg:grid-cols-[1.4fr_0.7fr_0.7fr] lg:gap-16 lg:py-20"
-    >
+    <div class="grid gap-12 py-12 sm:py-16 lg:grid-cols-[1.4fr_0.7fr_0.7fr] lg:gap-16 lg:py-20">
       <div class="max-w-xl">
         <a
           href={lang === 'pt' ? '/pt/' : '/'}
@@ -64,30 +62,20 @@ const socialLinks = [
           {t.footer.endContext}
         </p>
 
-        <div
-          class="mt-6 inline-flex items-center gap-2 rounded-full border border-success/20 bg-success/5 px-3 py-2"
-        >
+        <div class="mt-6 inline-flex items-center gap-2 rounded-full border border-success/20 bg-success/5 px-3 py-2">
           <span class="relative flex h-2 w-2">
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-40"
-            />
-            <span
-              class="relative inline-flex h-2 w-2 rounded-full bg-success"
-            />
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-40" />
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-success" />
           </span>
 
-          <span
-            class="font-mono text-[10px] uppercase tracking-widest text-success"
-          >
+          <span class="font-mono text-[10px] uppercase tracking-widest text-success">
             {t.footer.online}
           </span>
         </div>
       </div>
 
       <div>
-        <p
-          class="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-text-muted"
-        >
+        <p class="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">
           {t.footer.navigation}
         </p>
 
@@ -95,76 +83,68 @@ const socialLinks = [
           aria-label={t.footer.navigationAriaLabel}
           class="flex flex-col items-start gap-4"
         >
-          {
-            navigation.map((link, index) => (
-              <a
-                href={link.href}
-                class="group flex items-center gap-3 text-sm text-text-muted transition-colors hover:text-primary-light"
+          {navigation.map((link, index) => (
+            <a
+              href={link.href}
+              class="group flex items-center gap-3 text-sm text-text-muted transition-colors hover:text-primary-light"
+            >
+              <span class="font-mono text-[10px] text-primary-light/60">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+
+              <span>{link.label}</span>
+
+              <span
+                aria-hidden="true"
+                class="opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
               >
-                <span class="font-mono text-[10px] text-primary-light/60">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-
-                <span>{link.label}</span>
-
-                <span
-                  aria-hidden="true"
-                  class="opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
-                >
-                  →
-                </span>
-              </a>
-            ))
-          }
+                →
+              </span>
+            </a>
+          ))}
         </nav>
       </div>
 
       <div>
-        <p
-          class="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-text-muted"
-        >
+        <p class="mb-5 font-mono text-xs uppercase tracking-[0.18em] text-text-muted">
           {t.footer.elsewhere}
         </p>
 
         <div class="flex flex-col items-start gap-4">
-          {
-            socialLinks.map((link) => (
-              <a
-                href={link.href}
-                target={link.href.startsWith('mailto:') ? undefined : '_blank'}
-                rel={
-                  link.href.startsWith('mailto:')
-                    ? undefined
-                    : 'noopener noreferrer'
-                }
-                class="group flex items-center gap-3 text-sm text-text-muted transition-colors hover:text-primary-light"
-              >
-                <span>{link.label}</span>
+          {socialLinks.map((link) => (
+            <a
+              href={link.href}
+              target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={
+                link.href.startsWith('mailto:')
+                  ? undefined
+                  : 'noopener noreferrer'
+              }
+              class="group flex items-center gap-3 text-sm text-text-muted transition-colors hover:text-primary-light"
+            >
+              <span>{link.label}</span>
 
-                <span
-                  aria-hidden="true"
-                  class="font-mono text-xs transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                >
-                  ↗
-                </span>
-              </a>
-            ))
-          }
+              <span
+                aria-hidden="true"
+                class="font-mono text-xs transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              >
+                ↗
+              </span>
+            </a>
+          ))}
         </div>
       </div>
     </div>
 
-    <div
-      class="flex flex-col gap-4 border-t border-border/60 py-5 sm:flex-row sm:items-center sm:justify-between sm:py-6"
-    >
-      <div
-        class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-wider text-text-muted sm:text-xs"
-      >
+    <div class="flex flex-col gap-4 border-t border-border/60 py-5 sm:flex-row sm:items-center sm:justify-between sm:py-6">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-wider text-text-muted sm:text-xs">
         <span class="text-success">●</span>
 
         <span>{t.footer.copyright.replace('{year}', String(currentYear))}</span>
 
-        <span aria-hidden="true" class="text-text-muted/40">/</span>
+        <span aria-hidden="true" class="text-text-muted/40">
+          /
+        </span>
 
         <span>{t.footer.builtWith}</span>
       </div>

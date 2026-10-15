@@ -94,9 +94,7 @@ const t = translations[lang];
       const item = t.currently[activity.key];
 
       const accentText =
-        activity.accent === 'green'
-          ? 'text-success'
-          : 'text-primary-light';
+        activity.accent === 'green' ? 'text-success' : 'text-primary-light';
 
       const accentBorder =
         activity.accent === 'green'
@@ -104,14 +102,10 @@ const t = translations[lang];
           : 'border-primary-light/70';
 
       const accentBackground =
-        activity.accent === 'green'
-          ? 'bg-success/10'
-          : 'bg-primary/10';
+        activity.accent === 'green' ? 'bg-success/10' : 'bg-primary/10';
 
       const accentGlow =
-        activity.accent === 'green'
-          ? 'bg-success/10'
-          : 'bg-primary/10';
+        activity.accent === 'green' ? 'bg-success/10' : 'bg-primary/10';
 
       return (
         <article
@@ -162,7 +156,14 @@ const t = translations[lang];
                 accentText,
               ]}
             >
-              <span class:list={['h-1.5 w-1.5 rounded-full', activity.accent === 'green' ? 'bg-success' : 'bg-primary-light']}></span>
+              <span
+                class:list={[
+                  'h-1.5 w-1.5 rounded-full',
+                  activity.accent === 'green'
+                    ? 'bg-success'
+                    : 'bg-primary-light',
+                ]}
+              ></span>
               {item.label}
             </span>
           </div>
@@ -248,7 +249,12 @@ const t = translations[lang];
                 {t.currently.focusLabel}
               </p>
 
-              <p class:list={['mt-2 font-mono text-xs uppercase tracking-wider', accentText]}>
+              <p
+                class:list={[
+                  'mt-2 font-mono text-xs uppercase tracking-wider',
+                  accentText,
+                ]}
+              >
                 {item.focus}
               </p>
             </div>

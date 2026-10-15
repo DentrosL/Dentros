@@ -34,33 +34,26 @@ const groupsLabel = t.stack.groups.replace(
   ></div>
 
   <div class="relative mx-auto w-full">
-    <header
-      class="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-end"
-    >
+    <header class="mb-10 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
       <div>
         <div class="mb-5 flex flex-wrap items-center gap-3">
           <p class="font-mono text-sm text-primary-light">
             $ tech_stack --list
           </p>
 
-          <span
-            class="rounded-md border border-border bg-surface/60 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-text-muted"
-          >
+          <span class="rounded-md border border-border bg-surface/60 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-text-muted">
             {t.stack.technicalProfile}
           </span>
         </div>
 
-        <h2
-          class="text-4xl font-bold tracking-tight text-text sm:text-5xl lg:text-6xl"
-        >
-          {t.stack.title}<span class="text-primary-light">.</span>
+        <h2 class="text-4xl font-bold tracking-tight text-text sm:text-5xl lg:text-6xl">
+          {t.stack.title}
+          <span class="text-primary-light">.</span>
         </h2>
       </div>
 
       <div class="flex shrink-0 items-center gap-4 border-l border-border pl-5">
-        <span
-          class="font-mono text-4xl font-bold tracking-tight text-primary-light"
-        >
+        <span class="font-mono text-4xl font-bold tracking-tight text-primary-light">
           {String(totalTechnologies).padStart(2, '0')}
         </span>
 
@@ -71,9 +64,7 @@ const groupsLabel = t.stack.groups.replace(
       </div>
     </header>
 
-    <div
-      class="mb-8 flex flex-wrap items-center gap-3 font-mono text-xs text-text-muted"
-    >
+    <div class="mb-8 flex flex-wrap items-center gap-3 font-mono text-xs text-text-muted">
       <span class="h-1.5 w-1.5 rounded-full bg-success"></span>
       <span>{t.stack.overview}</span>
       <span class="text-border">/</span>
@@ -81,152 +72,136 @@ const groupsLabel = t.stack.groups.replace(
     </div>
 
     <div class="grid gap-5 lg:grid-cols-3">
-      {
-        stack.map((group) => {
-          const label = t.stack[group.categoryKey];
-          const description = t.stack.descriptions[group.categoryKey];
-          const category = t.stack.categories[group.categoryKey];
+      {stack.map((group) => {
+        const label = t.stack[group.categoryKey];
+        const description = t.stack.descriptions[group.categoryKey];
+        const category = t.stack.categories[group.categoryKey];
 
-          return (
-            <article
+        return (
+          <article
+            class:list={[
+              'group relative flex min-h-full flex-col overflow-hidden rounded-2xl border bg-surface/50 transition-all duration-300 hover:-translate-y-1 hover:bg-surface/90',
+              group.categoryKey === 'primary' &&
+                'border-primary/30 hover:border-primary/60',
+              group.categoryKey === 'workingWith' &&
+                'border-success/20 hover:border-success/40',
+              group.categoryKey === 'learning' &&
+                'border-border hover:border-text-muted/40',
+            ]}
+          >
+            <div
               class:list={[
-                'group relative flex min-h-full flex-col overflow-hidden rounded-2xl border bg-surface/50 transition-all duration-300 hover:-translate-y-1 hover:bg-surface/90',
+                'absolute inset-x-0 top-0 h-1 opacity-70 transition-opacity group-hover:opacity-100',
                 group.categoryKey === 'primary' &&
-                  'border-primary/30 hover:border-primary/60',
+                  'bg-linear-to-r from-primary-dark via-primary-light to-transparent',
                 group.categoryKey === 'workingWith' &&
-                  'border-success/20 hover:border-success/40',
+                  'bg-linear-to-r from-success/80 via-success/30 to-transparent',
                 group.categoryKey === 'learning' &&
-                  'border-border hover:border-text-muted/40',
+                  'bg-linear-to-r from-text-muted/60 via-border to-transparent',
               ]}
-            >
-              <div
-                class:list={[
-                  'absolute inset-x-0 top-0 h-1 opacity-70 transition-opacity group-hover:opacity-100',
-                  group.categoryKey === 'primary' &&
-                    'bg-linear-to-r from-primary-dark via-primary-light to-transparent',
-                  group.categoryKey === 'workingWith' &&
-                    'bg-linear-to-r from-success/80 via-success/30 to-transparent',
-                  group.categoryKey === 'learning' &&
-                    'bg-linear-to-r from-text-muted/60 via-border to-transparent',
-                ]}
-                aria-hidden="true"
-              />
+              aria-hidden="true"
+            />
 
-              <div class="flex items-start justify-between gap-4 border-b border-border/70 px-5 py-5 sm:px-6">
-                <div>
-                  <p class="mb-2 font-mono text-xs text-text-muted">
-                    {t.stack.group} / {group.id}
-                  </p>
-
-                  <h3
-                    class:list={[
-                      'text-lg font-bold tracking-tight sm:text-xl',
-                      group.categoryKey === 'primary' &&
-                        'text-primary-light',
-                      group.categoryKey === 'workingWith' &&
-                        'text-success',
-                      group.categoryKey === 'learning' && 'text-text',
-                    ]}
-                  >
-                    {label}
-                  </h3>
-                </div>
-
-                <span
-                  class:list={[
-                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border font-mono text-sm font-bold',
-                    group.categoryKey === 'primary' &&
-                      'border-primary/30 bg-primary/10 text-primary-light',
-                    group.categoryKey === 'workingWith' &&
-                      'border-success/20 bg-success/5 text-success',
-                    group.categoryKey === 'learning' &&
-                      'border-border bg-background/50 text-text-muted',
-                  ]}
-                  aria-hidden="true"
-                >
-                  {group.id}
-                </span>
-              </div>
-
-              <div class="flex flex-1 flex-col p-5 sm:p-6">
-                <p class="mb-6 text-sm leading-6 text-text-muted">
-                  {description}
+            <div class="flex items-start justify-between gap-4 border-b border-border/70 px-5 py-5 sm:px-6">
+              <div>
+                <p class="mb-2 font-mono text-xs text-text-muted">
+                  {t.stack.group} / {group.id}
                 </p>
 
-                <div class="flex flex-wrap gap-2.5">
-                  {group.technologies.map((technology) => (
+                <h3
+                  class:list={[
+                    'text-lg font-bold tracking-tight sm:text-xl',
+                    group.categoryKey === 'primary' && 'text-primary-light',
+                    group.categoryKey === 'workingWith' && 'text-success',
+                    group.categoryKey === 'learning' && 'text-text',
+                  ]}
+                >
+                  {label}
+                </h3>
+              </div>
+
+              <span
+                class:list={[
+                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border font-mono text-sm font-bold',
+                  group.categoryKey === 'primary' &&
+                    'border-primary/30 bg-primary/10 text-primary-light',
+                  group.categoryKey === 'workingWith' &&
+                    'border-success/20 bg-success/5 text-success',
+                  group.categoryKey === 'learning' &&
+                    'border-border bg-background/50 text-text-muted',
+                ]}
+                aria-hidden="true"
+              >
+                {group.id}
+              </span>
+            </div>
+
+            <div class="flex flex-1 flex-col p-5 sm:p-6">
+              <p class="mb-6 text-sm leading-6 text-text-muted">
+                {description}
+              </p>
+
+              <div class="flex flex-wrap gap-2.5">
+                {group.technologies.map((technology) => (
+                  <span
+                    class:list={[
+                      'inline-flex items-center gap-2 rounded-lg border bg-background/60 px-3 py-2.5 text-sm font-medium text-text transition-all duration-200 group-hover:bg-background/90',
+                      group.categoryKey === 'primary' &&
+                        'border-primary/20 hover:border-primary/50',
+                      group.categoryKey === 'workingWith' &&
+                        'border-success/15 hover:border-success/40',
+                      group.categoryKey === 'learning' &&
+                        'border-border hover:border-text-muted/50',
+                    ]}
+                  >
                     <span
                       class:list={[
-                        'inline-flex items-center gap-2 rounded-lg border bg-background/60 px-3 py-2.5 text-sm font-medium text-text transition-all duration-200 group-hover:bg-background/90',
-                        group.categoryKey === 'primary' &&
-                          'border-primary/20 hover:border-primary/50',
-                        group.categoryKey === 'workingWith' &&
-                          'border-success/15 hover:border-success/40',
-                        group.categoryKey === 'learning' &&
-                          'border-border hover:border-text-muted/50',
+                        'h-1.5 w-1.5 rounded-full',
+                        group.categoryKey === 'primary' && 'bg-primary-light',
+                        group.categoryKey === 'workingWith' && 'bg-success',
+                        group.categoryKey === 'learning' && 'bg-text-muted',
                       ]}
-                    >
-                      <span
-                        class:list={[
-                          'h-1.5 w-1.5 rounded-full',
-                          group.categoryKey === 'primary' &&
-                            'bg-primary-light',
-                          group.categoryKey === 'workingWith' &&
-                            'bg-success',
-                          group.categoryKey === 'learning' &&
-                            'bg-text-muted',
-                        ]}
-                        aria-hidden="true"
-                      ></span>
+                      aria-hidden="true"
+                    ></span>
 
-                      {technology.name}
-                    </span>
-                  ))}
-                </div>
+                    {technology.name}
+                  </span>
+                ))}
+              </div>
 
-                <div class="mt-auto pt-8">
-                  <div class="mb-3 h-px w-full bg-border/70"></div>
+              <div class="mt-auto pt-8">
+                <div class="mb-3 h-px w-full bg-border/70"></div>
 
-                  <div class="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-wider text-text-muted">
-                    <span>{category}</span>
+                <div class="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-wider text-text-muted">
+                  <span>{category}</span>
 
-                    <span
-                      class:list={[
-                        'flex items-center gap-1.5',
-                        group.categoryKey === 'primary' &&
-                          'text-primary-light',
-                        group.categoryKey === 'workingWith' &&
-                          'text-success',
-                        group.categoryKey === 'learning' &&
-                          'text-text-muted',
-                      ]}
-                    >
-                      <span aria-hidden="true">●</span>
-                      {String(group.technologies.length).padStart(2, '0')}
-                      {t.stack.items}
-                    </span>
-                  </div>
+                  <span
+                    class:list={[
+                      'flex items-center gap-1.5',
+                      group.categoryKey === 'primary' && 'text-primary-light',
+                      group.categoryKey === 'workingWith' && 'text-success',
+                      group.categoryKey === 'learning' && 'text-text-muted',
+                    ]}
+                  >
+                    <span aria-hidden="true">●</span>
+                    {String(group.technologies.length).padStart(2, '0')}
+                    {t.stack.items}
+                  </span>
                 </div>
               </div>
-            </article>
-          );
-        })
-      }
+            </div>
+          </article>
+        );
+      })}
     </div>
 
-    <footer
-      class="mt-6 flex flex-col justify-between gap-3 rounded-xl border border-border/70 bg-surface/30 px-5 py-4 sm:flex-row sm:items-center"
-    >
+    <footer class="mt-6 flex flex-col justify-between gap-3 rounded-xl border border-border/70 bg-surface/30 px-5 py-4 sm:flex-row sm:items-center">
       <p class="text-xs leading-6 text-text-muted">
-        <span class="font-mono text-primary-light">
-          {t.stack.noteLabel}
-        </span>
+        <span class="font-mono text-primary-light">{t.stack.noteLabel}</span>
         {t.stack.note}
       </p>
 
-      <span
-        class="shrink-0 font-mono text-[10px] uppercase tracking-wider text-text-muted"
-      >
+      <span class="shrink-0 font-mono text-[10px] uppercase tracking-wider text-text-muted">
         {t.stack.status}
       </span>
     </footer>

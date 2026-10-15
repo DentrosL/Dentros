@@ -18,39 +18,28 @@ const t = translations[lang];
   ></div>
 
   <div class="relative mx-auto w-full">
-    <header
-      class="mb-12 flex flex-col justify-between gap-8 md:mb-14 md:flex-row md:items-end"
-    >
+    <header class="mb-12 flex flex-col justify-between gap-8 md:mb-14 md:flex-row md:items-end">
       <div>
         <div class="mb-5 flex flex-wrap items-center gap-3">
-          <span class="text-sm text-primary-light">
-            {t.work.command}
-          </span>
+          <span class="text-sm text-primary-light">{t.work.command}</span>
 
-          <span
-            class="rounded-md border border-primary/25 bg-primary/10 px-2.5 py-1 text-[10px] tracking-wider text-primary-light"
-          >
+          <span class="rounded-md border border-primary/25 bg-primary/10 px-2.5 py-1 text-[10px] tracking-wider text-primary-light">
             {t.work.eyebrow}
           </span>
         </div>
 
-        <h2
-          class="text-4xl font-bold tracking-tight text-text sm:text-5xl lg:text-6xl"
-        >
-          {t.work.title}<span class="text-primary-light">.</span>
+        <h2 class="text-4xl font-bold tracking-tight text-text sm:text-5xl lg:text-6xl">
+          {t.work.title}
+          <span class="text-primary-light">.</span>
         </h2>
 
-        <p
-          class="mt-5 max-w-2xl text-sm leading-7 text-text-muted sm:text-base sm:leading-8"
-        >
+        <p class="mt-5 max-w-2xl text-sm leading-7 text-text-muted sm:text-base sm:leading-8">
           {t.work.description}
         </p>
       </div>
 
       <div class="flex shrink-0 items-center gap-4">
-        <span
-          class="text-4xl font-bold tracking-tight text-primary-light sm:text-5xl"
-        >
+        <span class="text-4xl font-bold tracking-tight text-primary-light sm:text-5xl">
           {String(projects.length).padStart(2, '0')}
         </span>
 
@@ -65,110 +54,95 @@ const t = translations[lang];
       </div>
     </header>
 
-    {
-      projects.length > 0 ? (
-        <div
-          class="relative"
-          aria-label={t.work.title}
-        >
-          <div
-            class="grid grid-flow-col auto-cols-[88%] gap-5 overflow-x-auto overscroll-x-contain pb-5 snap-x snap-mandatory sm:auto-cols-[70%] md:auto-cols-[calc((100%-1.25rem)/2)] xl:auto-cols-[calc((100%-2.5rem)/3)]"
-          >
-            {projects.map((project, index) => (
-              <article
-                class="group relative flex min-h-87.5 snap-start flex-col overflow-hidden rounded-2xl border border-border/80 bg-surface/70 shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-xl hover:shadow-primary/5"
-              >
-                <div
-                  class="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-primary-dark via-primary-light to-primary-dark opacity-60 transition-opacity duration-300 group-hover:opacity-100"
-                  aria-hidden="true"
-                ></div>
+    {projects.length > 0 ? (
+      <div class="relative" aria-label={t.work.title}>
+        <div class="grid grid-flow-col auto-cols-[88%] gap-5 overflow-x-auto overscroll-x-contain pb-5 snap-x snap-mandatory sm:auto-cols-[70%] md:auto-cols-[calc((100%-1.25rem)/2)] xl:auto-cols-[calc((100%-2.5rem)/3)]">
+          {projects.map((project, index) => (
+            <article class="group relative flex min-h-87.5 snap-start flex-col overflow-hidden rounded-2xl border border-border/80 bg-surface/70 shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-xl hover:shadow-primary/5">
+              <div
+                class="absolute inset-x-0 top-0 h-1 bg-linear-to-r from-primary-dark via-primary-light to-primary-dark opacity-60 transition-opacity duration-300 group-hover:opacity-100"
+                aria-hidden="true"
+              ></div>
 
-                <div class="flex items-center justify-between gap-4 border-b border-border/70 px-5 py-4 sm:px-6">
-                  <span class="text-xs font-medium text-primary-light">
-                    {project.type}
+              <div class="flex items-center justify-between gap-4 border-b border-border/70 px-5 py-4 sm:px-6">
+                <span class="text-xs font-medium text-primary-light">
+                  {project.type}
+                </span>
+
+                <span class="font-mono text-[10px] tracking-wider text-text-muted">
+                  PROJECT / {String(index + 1).padStart(2, '0')}
+                </span>
+              </div>
+
+              <div class="flex flex-1 flex-col p-5 sm:p-6">
+                <div class="mb-5 flex items-center justify-between gap-4">
+                  <span
+                    class="flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-primary/15 text-lg font-bold text-primary-light transition-colors group-hover:border-primary/50 group-hover:bg-primary/20"
+                    aria-hidden="true"
+                  >
+                    {String(index + 1).padStart(2, '0')}
                   </span>
 
-                  <span class="font-mono text-[10px] tracking-wider text-text-muted">
-                    PROJECT / {String(index + 1).padStart(2, '0')}
+                  <span
+                    class="inline-flex items-center gap-2 rounded-full border border-success/20 bg-success/5 px-3 py-1.5 text-[10px] text-success"
+                    title="Repository available"
+                  >
+                    <span aria-hidden="true">●</span>
+                    {t.work.repository}
                   </span>
                 </div>
 
-                <div class="flex flex-1 flex-col p-5 sm:p-6">
-                  <div class="mb-5 flex items-center justify-between gap-4">
+                <h3 class="text-xl font-bold tracking-tight text-text transition-colors group-hover:text-primary-light sm:text-2xl">
+                  {project.title}
+                </h3>
+
+                <p class="mt-4 flex-1 text-sm leading-7 text-text-muted">
+                  {t.projects[project.descriptionKey]}
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-text-muted transition-colors group-hover:border-primary/20">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div class="mt-6 border-t border-border/70 pt-5">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-sm font-bold text-text transition-colors hover:text-primary-light"
+                  >
+                    {t.work.repository}
+
                     <span
-                      class="flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-primary/15 text-lg font-bold text-primary-light transition-colors group-hover:border-primary/50 group-hover:bg-primary/20"
+                      class="text-primary-light transition-transform duration-200 group-hover:translate-x-1"
                       aria-hidden="true"
                     >
-                      {String(index + 1).padStart(2, '0')}
+                      →
                     </span>
-
-                    <span
-                      class="inline-flex items-center gap-2 rounded-full border border-success/20 bg-success/5 px-3 py-1.5 text-[10px] text-success"
-                      title="Repository available"
-                    >
-                      <span aria-hidden="true">●</span>
-                      {t.work.repository}
-                    </span>
-                  </div>
-
-                  <h3
-                    class="text-xl font-bold tracking-tight text-text transition-colors group-hover:text-primary-light sm:text-2xl"
-                  >
-                    {project.title}
-                  </h3>
-
-                  <p class="mt-4 flex-1 text-sm leading-7 text-text-muted">
-                    {t.projects[project.descriptionKey]}
-                  </p>
-
-                  <div class="mt-6 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-text-muted transition-colors group-hover:border-primary/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div class="mt-6 border-t border-border/70 pt-5">
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="inline-flex items-center gap-2 text-sm font-bold text-text transition-colors hover:text-primary-light"
-                    >
-                      {t.work.repository}
-
-                      <span
-                        class="text-primary-light transition-transform duration-200 group-hover:translate-x-1"
-                        aria-hidden="true"
-                      >
-                        →
-                      </span>
-                    </a>
-                  </div>
+                  </a>
                 </div>
-              </article>
-            ))}
-          </div>
-
-          {
-            projects.length > 3 && (
-              <p class="mt-3 text-right text-xs text-text-muted">
-                <span class="mr-1 text-primary-light" aria-hidden="true">
-                  ↔
-                </span>
-                Scroll to explore projects
-              </p>
-            )
-          }
+              </div>
+            </article>
+          ))}
         </div>
-      ) : (
-        <p class="rounded-2xl border border-border bg-surface/50 p-8 text-sm text-text-muted">
-          {t.work.empty}
-        </p>
-      )
-    }
+
+        {projects.length > 3 && (
+          <p class="mt-3 text-right text-xs text-text-muted">
+            <span class="mr-1 text-primary-light" aria-hidden="true">
+              ↔
+            </span>
+            Scroll to explore projects
+          </p>
+        )}
+      </div>
+    ) : (
+      <p class="rounded-2xl border border-border bg-surface/50 p-8 text-sm text-text-muted">
+        {t.work.empty}
+      </p>
+    )}
   </div>
 </section>

@@ -52,8 +52,7 @@ export const translations = {
         'Classic sorting algorithms implemented from scratch in Python, with a focus on understanding their logic, behavior and differences.',
       worktree:
         'A practical exploration of Git Worktree, combining technical documentation, real examples and a small Python project.',
-      avl:
-        'An implementation-focused study of AVL trees and self-balancing data structures, developed as part of my studies.',
+      avl: 'An implementation-focused study of AVL trees and self-balancing data structures, developed as part of my studies.',
     },
 
     about: {
@@ -182,9 +181,9 @@ export const translations = {
     },
   },
 
-// ----------------------------------------------------------------------------------- \\
-// ----------------------------------------------------------------------------------- \\
-// ----------------------------------------------------------------------------------- \\
+  // ----------------------------------------------------------------------------------- \\
+  // ----------------------------------------------------------------------------------- \\
+  // ----------------------------------------------------------------------------------- \\
 
   pt: {
     nav: {
@@ -225,8 +224,8 @@ export const translations = {
       title: 'Projetos',
       description:
         'Alguns projetos onde explorei algoritmos, estruturas de dados, ferramentas de desenvolvimento e resolução de problemas.',
-      
-        eyebrow: 'PROJETOS SELECIONADOS',
+
+      eyebrow: 'PROJETOS SELECIONADOS',
       command: '$ ls -la ./projetos',
       count: 'PROJETOS',
       repository: 'ver_repositorio()',
@@ -239,8 +238,7 @@ export const translations = {
         'Algoritmos clássicos de ordenação implementados do zero em Python, com foco em entender sua lógica, comportamento e diferenças.',
       worktree:
         'Uma exploração prática do Git Worktree, combinando documentação técnica, exemplos reais e um pequeno projeto em Python.',
-      avl:
-        'Um estudo prático de árvores AVL e estruturas de dados auto balanceadas, desenvolvido como parte dos meus estudos.',
+      avl: 'Um estudo prático de árvores AVL e estruturas de dados auto balanceadas, desenvolvido como parte dos meus estudos.',
     },
 
     about: {
@@ -262,7 +260,8 @@ export const translations = {
       workingWith: 'trabalhando_com',
       learning: 'aprendendo',
       descriptions: {
-        primary: 'Tecnologias que utilizo em projetos e no desenvolvimento diário.',
+        primary:
+          'Tecnologias que utilizo em projetos e no desenvolvimento diário.',
         workingWith: 'Ferramentas e tecnologias com as quais trabalho.',
         learning: 'Tecnologias e assuntos que estou explorando ativamente.',
       },
@@ -357,7 +356,8 @@ export const translations = {
     },
 
     footer: {
-      endContext: 'aprendendo continuamente - transformando ideias em projetos.',
+      endContext:
+        'aprendendo continuamente - transformando ideias em projetos.',
       builtWith: 'feito com Astro & TypeScript',
       online: 'PORTFÓLIO.ONLINE',
       navigation: 'NAVEGAÇÃO',

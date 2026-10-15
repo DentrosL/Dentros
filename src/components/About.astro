@@ -19,21 +19,16 @@ const t = translations[lang];
   <div class="relative mx-auto w-full">
     <header class="mb-12 sm:mb-16">
       <div class="mb-5 flex flex-wrap items-center gap-3">
-        <p class="text-sm text-primary-light">
-          $ cat about.txt
-        </p>
+        <p class="text-sm text-primary-light">$ cat about.txt</p>
 
-        <span
-          class="rounded-md border border-border bg-surface/60 px-2.5 py-1 text-[10px] tracking-wider text-text-muted"
-        >
+        <span class="rounded-md border border-border bg-surface/60 px-2.5 py-1 text-[10px] tracking-wider text-text-muted">
           ABOUT_ME
         </span>
       </div>
 
-      <h2
-        class="text-4xl font-bold tracking-tight text-text sm:text-5xl lg:text-6xl"
-      >
-        {t.about.title}<span class="text-primary-light">.</span>
+      <h2 class="text-4xl font-bold tracking-tight text-text sm:text-5xl lg:text-6xl">
+        {t.about.title}
+        <span class="text-primary-light">.</span>
       </h2>
     </header>
 
@@ -76,9 +71,7 @@ const t = translations[lang];
         class="h-fit overflow-hidden rounded-2xl border border-border bg-surface/60 shadow-xl shadow-black/10"
         aria-label={t.about.title}
       >
-        <div
-          class="flex items-center justify-between border-b border-border bg-background/40 px-5 py-4 sm:px-6"
-        >
+        <div class="flex items-center justify-between border-b border-border bg-background/40 px-5 py-4 sm:px-6">
           <div class="flex items-center gap-2">
             <span class="h-2.5 w-2.5 rounded-full bg-danger/80"></span>
             <span class="h-2.5 w-2.5 rounded-full bg-primary-light/80"></span>
@@ -101,9 +94,7 @@ const t = translations[lang];
               </span>
 
               <div class="min-w-0 flex-1">
-                <p class="text-xs tracking-wide text-primary-light">
-                  role
-                </p>
+                <p class="text-xs tracking-wide text-primary-light">role</p>
 
                 <p class="mt-2 font-medium leading-6 text-text">
                   {t.about.role}
@@ -122,9 +113,7 @@ const t = translations[lang];
               </span>
 
               <div class="min-w-0 flex-1">
-                <p class="text-xs tracking-wide text-primary-light">
-                  focus
-                </p>
+                <p class="text-xs tracking-wide text-primary-light">focus</p>
 
                 <p class="mt-2 font-medium leading-6 text-text">
                   {t.about.focus}
@@ -143,9 +132,7 @@ const t = translations[lang];
               </span>
 
               <div class="min-w-0 flex-1">
-                <p class="text-xs tracking-wide text-primary-light">
-                  approach
-                </p>
+                <p class="text-xs tracking-wide text-primary-light">approach</p>
 
                 <p class="mt-2 font-medium leading-6 text-text">
                   {t.about.approach}
@@ -155,17 +142,13 @@ const t = translations[lang];
           </div>
         </div>
 
-        <div
-          class="flex items-center justify-between gap-4 border-t border-border bg-background/40 px-5 py-4 sm:px-6"
-        >
+        <div class="flex items-center justify-between gap-4 border-t border-border bg-background/40 px-5 py-4 sm:px-6">
           <span class="flex items-center gap-2 text-xs text-success">
             <span aria-hidden="true">●</span>
             <span>PROFILE_LOADED</span>
           </span>
 
-          <span class="font-mono text-[10px] text-text-muted">
-            JSON / 03
-          </span>
+          <span class="font-mono text-[10px] text-text-muted">JSON / 03</span>
         </div>
       </aside>
     </div>

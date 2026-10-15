@@ -27,3 +27,4 @@ src/
 ├── pages/
 │   └── pt/
 └── styles/
+```
