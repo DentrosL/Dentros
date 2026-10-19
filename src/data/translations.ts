@@ -7,7 +7,7 @@ export const translations = {
       menu: 'menu',
       language: 'language',
       ariaLabel: 'Main navigation',
-      homeLabel: 'Dentros — Home',
+      homeLabel: 'Dentros - Home',
       navigation: 'NAVIGATION',
       online: 'ONLINE',
     },
@@ -19,6 +19,7 @@ export const translations = {
         'I build organized systems, solve problems and turn ideas into software. Currently working, studying and constantly learning.',
       work: 'view_work()',
       contact: 'contact_me()',
+      resume: 'download_cv()',
       availability: 'available for opportunities',
     },
 
@@ -98,7 +99,7 @@ export const translations = {
 
     currently: {
       title: 'Currently',
-      introTitle: "What's on my radar.",
+      introTitle: "What's on my radar",
       introDescription:
         'Continuous learning, ongoing projects, and ideas I am exploring.',
 
@@ -142,7 +143,7 @@ export const translations = {
     },
 
     contact: {
-      title: 'Let’s build something.',
+      title: 'Let’s build something',
       description:
         'Have a project in mind, want to exchange ideas, or just want to connect? My inbox is open.',
       eyebrow: 'GET IN TOUCH',
@@ -193,7 +194,7 @@ export const translations = {
       menu: 'menu',
       language: 'idioma',
       ariaLabel: 'Navegação principal',
-      homeLabel: 'Dentros — Início',
+      homeLabel: 'Dentros - Início',
       navigation: 'NAVEGAÇÃO',
       online: 'ONLINE',
     },
@@ -205,6 +206,7 @@ export const translations = {
         'Construo sistemas organizados, resolvo problemas e transformo ideias em software. Atualmente trabalhando, estudando e aprendendo constantemente.',
       work: 'ver_projetos()',
       contact: 'entrar_em_contato()',
+      resume: 'baixar_curriculo()',
       availability: 'disponível para oportunidades',
     },
 
@@ -284,7 +286,7 @@ export const translations = {
 
     currently: {
       title: 'Atualmente',
-      introTitle: 'O que está no meu radar.',
+      introTitle: 'O que está no meu radarz',
       introDescription:
         'Aprendizado contínuo, projetos em andamento e ideias que estou explorando.',
 
@@ -328,7 +330,7 @@ export const translations = {
     },
 
     contact: {
-      title: 'Vamos construir algo.',
+      title: 'Vamos construir algo',
       description:
         'Tem um projeto em mente, quer trocar ideias ou simplesmente entrar em contato? Minha caixa de entrada está aberta.',
       eyebrow: 'VAMOS CONVERSAR',

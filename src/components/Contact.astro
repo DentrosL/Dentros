@@ -107,7 +107,7 @@ const t = translations[lang];
     <div class="relative flex flex-col">
       <div class="mb-5">
         <p class="font-mono text-xs uppercase tracking-[0.16em] text-text-muted">
-          / 01 — {t.contact.linksTitle}
+          / 01 - {t.contact.linksTitle}
         </p>
 
         <p class="mt-3 text-sm leading-7 text-text-muted">
@@ -130,7 +130,7 @@ const t = translations[lang];
                   ? 'noopener noreferrer'
                   : undefined
               }
-              aria-label={`${item.labels[contact.key]} — ${item.descriptions[contact.key]}`}
+              aria-label={`${item.labels[contact.key]} - ${item.descriptions[contact.key]}`}
               aria-disabled={isWhatsApp ? 'true' : undefined}
               class:list={[
                 'group relative flex min-h-28 items-center gap-4 overflow-hidden rounded-xl border p-4 transition-all duration-300 sm:p-5',

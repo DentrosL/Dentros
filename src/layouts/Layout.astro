@@ -1,15 +1,25 @@
 ---
 import '../styles/global.css';
 
-const { title = 'Dentros' } = Astro.props;
+const {
+  title = 'Dentros',
+  description = 'Portfolio of Laiz Detros, a backend-focused full stack developer based in Brazil.',
+  lang = 'en',
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Portfolio of DentrosL" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <link rel="icon" type="image/png" href="/D2.png" />
     <title>{title}</title>
   </head>
