@@ -6,6 +6,8 @@ type Lang = keyof typeof translations;
 const { lang = 'en' } = Astro.props as { lang?: Lang };
 const t = translations[lang];
 
+const base = '/Dentros/';
+
 const links = [
   {
     label: t.nav.work,
@@ -23,8 +25,6 @@ const links = [
     number: '03',
   },
 ];
-
-const base = '/Dentros/';
 
 const languages = [
   {
