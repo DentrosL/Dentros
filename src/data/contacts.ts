@@ -28,7 +28,7 @@ export const contacts: Contact[] = [
   },
   {
     key: 'whatsapp',
-    href: 'https://wa.me/554791772731',
+    href: 'https://wa.me/99999999999',
     icon: 'whatsapp',
     external: true,
   },

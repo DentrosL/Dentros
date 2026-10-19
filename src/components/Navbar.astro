@@ -24,15 +24,17 @@ const links = [
   },
 ];
 
+const base = '/Dentros/';
+
 const languages = [
   {
     label: 'EN',
-    href: '/',
+    href: base,
     active: lang === 'en',
   },
   {
     label: 'PT',
-    href: '/pt/',
+    href: `${base}pt/`,
     active: lang === 'pt',
   },
 ];
@@ -45,7 +47,7 @@ const languages = [
   >
     <div class="flex min-h-19 items-center justify-between gap-6">
       <a
-        href={lang === 'pt' ? '/pt/' : '/'}
+        href={lang === 'pt' ? `${base}pt/` : base}
         aria-label={t.nav.homeLabel}
         class="group flex shrink-0 items-center gap-3"
       >
