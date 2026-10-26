@@ -1,4 +1,4 @@
-type ProjectDescriptionKey = 'sorting' | 'worktree' | 'avl';
+type ProjectDescriptionKey = 'sorting' | 'worktree' | 'avl' | 'anaBeatriz';
 
 type Project = {
   title: string;
@@ -6,6 +6,8 @@ type Project = {
   descriptionKey: ProjectDescriptionKey;
   tags: string[];
   href: string;
+  hrefSite?: string;
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -22,6 +24,15 @@ export const projects: Project[] = [
     descriptionKey: 'worktree',
     tags: ['Git', 'Python', 'Documentation'],
     href: 'https://github.com/DentrosL/WorktreeTests',
+  },
+  {
+    title: 'Ana Beatriz - Portifolio',
+    type: 'Portfolio Website',
+    descriptionKey: 'anaBeatriz',
+    tags: ['Portfolio', 'GitHub Pages'],
+    image: '/Dentros/images/image.png',
+    href: 'https://github.com/AnaBeatrizA-Silva/AnaBeatriz',
+    hrefSite: 'https://anabeatriza-silva.github.io/AnaBeatriz/',
   },
   {
     title: 'AVL',

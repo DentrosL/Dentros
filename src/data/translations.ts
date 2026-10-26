@@ -46,6 +46,7 @@ export const translations = {
       command: '$ ls -la ./projects',
       count: 'PROJECTS',
       repository: 'view_repository()',
+      projectLink: 'view_project()',
       index: 'PROJECT',
       empty: 'No projects available.',
     },
@@ -56,6 +57,7 @@ export const translations = {
       worktree:
         'A practical exploration of Git Worktree, combining technical documentation, real examples and a small Python project.',
       avl: 'An implementation-focused study of AVL trees and self-balancing data structures, developed as part of my studies.',
+      anaBeatriz: 'A personal portfolio website published with GitHub Pages.',
     },
 
     about: {
@@ -179,7 +181,7 @@ export const translations = {
       navigation: 'NAVIGATION',
       navigationAriaLabel: 'Footer navigation',
       elsewhere: 'ELSEWHERE',
-      copyright: '© {year} Dentros',
+      copyright: '© {year} DentrosL',
       backToTop: 'BACK TO TOP',
     },
   },
@@ -235,6 +237,7 @@ export const translations = {
       command: '$ ls -la ./projetos',
       count: 'PROJETOS',
       repository: 'ver_repositorio()',
+      projectLink: 'ver_projeto()',
       index: 'PROJETO',
       empty: 'Nenhum projeto disponível.',
     },
@@ -245,6 +248,7 @@ export const translations = {
       worktree:
         'Uma exploração prática do Git Worktree, combinando documentação técnica, exemplos reais e um pequeno projeto em Python.',
       avl: 'Um estudo prático de árvores AVL e estruturas de dados auto balanceadas, desenvolvido como parte dos meus estudos.',
+      anaBeatriz: 'Um portfólio pessoal publicado com GitHub Pages.',
     },
 
     about: {
@@ -369,7 +373,7 @@ export const translations = {
       navigation: 'NAVEGAÇÃO',
       navigationAriaLabel: 'Navegação do rodapé',
       elsewhere: 'OUTROS LINKS',
-      copyright: '© {year} Dentros',
+      copyright: '© {year} DentrosL',
       backToTop: 'VOLTAR AO TOPO',
     },
   },
