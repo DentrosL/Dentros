@@ -15,6 +15,12 @@ export const contacts: Contact[] = [
     external: false,
   },
   {
+    key: 'whatsapp',
+    href: 'https://wa.me/554791772731',
+    icon: 'whatsapp',
+    external: true,
+  },
+  {
     key: 'linkedin',
     href: 'https://www.linkedin.com/in/laiz-detros',
     icon: 'linkedin',
@@ -24,12 +30,6 @@ export const contacts: Contact[] = [
     key: 'github',
     href: 'https://github.com/DentrosL',
     icon: 'github',
-    external: true,
-  },
-  {
-    key: 'whatsapp',
-    href: 'https://wa.me/99999999999',
-    icon: 'whatsapp',
     external: true,
   },
 ];

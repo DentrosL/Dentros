@@ -113,7 +113,7 @@ const t = translations[lang];
                       <dialog
                         id={`image-preview-${index}`}
                         aria-label={`Image preview of ${project.title}`}
-                        class="w-[min(92vw,72rem)] max-w-none border-0 bg-transparent p-0 backdrop:bg-black/80"
+                        class="fixed inset-0 m-auto max-h-[90vh] w-[min(92vw,72rem)] max-w-none border-0 bg-transparent p-0 backdrop:bg-black/80"
                       >
                         <div class="relative">
                           <button
@@ -152,7 +152,7 @@ const t = translations[lang];
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm font-bold text-text transition-colors hover:text-primary-light"
+                    class="-ml-3 inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-bold text-text transition-all hover:-translate-y-0.5 hover:bg-primary/10 hover:text-primary-light"
                   >
                     {t.work.repository}
 
@@ -168,10 +168,12 @@ const t = translations[lang];
                       href={project.hrefSite}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="inline-flex items-center gap-2 text-sm font-bold text-text-muted transition-colors hover:text-primary-light"
+                      class="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-bold text-text-muted transition-all hover:-translate-y-0.5 hover:bg-primary/10 hover:text-primary-light"
                     >
                       {t.work.projectLink}
-                      <span class="text-primary-light" aria-hidden="true">↗</span>
+                      <span class="text-primary-light" aria-hidden="true">
+                        ↗
+                      </span>
                     </a>
                   )}
                 </div>
