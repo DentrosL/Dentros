@@ -21,7 +21,7 @@ export const translations = {
       contact: 'contact_me()',
       resume: 'download_cv()',
       resumeLink: '/Dentros/Lz%20CV(en).pdf',
-      download: 'Lz CV(en).pdf',
+      download: 'laiz_detros(en).pdf',
       availability: 'available for opportunities',
     },
 
@@ -210,7 +210,7 @@ export const translations = {
       contact: 'entrar_em_contato()',
       resume: 'baixar_curriculo()',
       resumeLink: '/Dentros/Lz%20CV(pt).pdf',
-      download: 'Lz CV(pt).pdf',
+      download: 'laiz_detros(pt).pdf',
       availability: 'disponível para oportunidades',
     },
 
